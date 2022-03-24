@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    validates :name, :password, presence: true
+    validates :name, :password_digest, presence: true
 
     has_secure_password 
     
