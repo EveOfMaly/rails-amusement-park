@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
         else 
             "happy"
         end
-        
+    end
+
+    def username=(user_id)
+        binding.pry
     end
 end
