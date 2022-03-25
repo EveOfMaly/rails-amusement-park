@@ -5,5 +5,7 @@ Mood <%= @user.mood %> <br>
 <%= @user.tickets %> <br>
 <%= @user.happiness %> <br>
 <%= @user.height %> <br>
-<%= @user.admin %> <br>
 
+<% if @user.admin == true %>
+    <p>ADMIN</p>
+<% end %>

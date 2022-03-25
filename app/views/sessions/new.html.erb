@@ -1,6 +1,6 @@
 <%= form_tag ({controller: 'sessions', action: "create", method: 'post'}) do %>
     <label> Your Name: </label> 
-    <%= collection_select(:user_name, :name, User.all, :name, :name) %><br>
+    <%= collection_select(:user, :name, User.all, :name, :name) %><br>
     <label> Your password: <label>
     <input name=password>
     <input type=submit value='Sign In'>
