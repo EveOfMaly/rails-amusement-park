@@ -1,0 +1,37 @@
+Listing attraction
+<hr>
+
+
+    <div class="row">
+        <div class="column" >
+            <h4>Name</h4>
+        </div>
+        <div class="column">
+            <h4>Tickets</h4>
+        </div>
+        <div class="column">
+            <h4>Details</h4>
+        </div>
+    </div>
+<% @attractions.each do |attraction| %>
+    <div class="row">
+        <div class="column" >
+            <p><%= attraction.name %></p>
+        </div>
+        <div class="column">
+            <p><%= attraction.tickets %></p>
+        </div>
+        <div class="column">
+            <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %>
+        </div>
+    </div>
+<% end %>
+
+
+
+
+<%= link_to "New Attraction", new_attraction_path %>
+
+
+
+

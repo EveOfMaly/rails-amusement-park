@@ -1,0 +1,15 @@
+<h1> Attraction Show Page </h1>
+Name: <%= @attraction.name %> <br>
+
+To make total amount of users method 
+
+
+Ticket Requirement <%= @attraction.tickets %> <br>
+Height Requirement <%= @attraction.min_height %> <br>
+Nausea Requirement <%= @attraction.nausea_rating %> <br>
+Nausea Requirement <%= @attraction.happiness_rating %> <br>
+
+
+
+<%= button_to "Go on this ride", rides_path, method: 'post', action: "new" %>
+
