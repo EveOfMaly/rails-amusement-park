@@ -1,4 +1,4 @@
-<h1> Attraction Show Page </h1>
+<h1> Show <%=@attraction.name %> </h1>
 Name: <%= @attraction.name %> <br>
 
 To make total amount of users method 
@@ -7,9 +7,12 @@ To make total amount of users method
 Ticket Requirement <%= @attraction.tickets %> <br>
 Height Requirement <%= @attraction.min_height %> <br>
 Nausea Requirement <%= @attraction.nausea_rating %> <br>
-Nausea Requirement <%= @attraction.happiness_rating %> <br>
+Happiness Requirement <%= @attraction.happiness_rating %> <br>
 
+<% if current_user.admin != true %>
+    <%= button_to "Go on this ride", rides_path, params: {attraction: params[:id]}, method: 'post', action: "create" %>
+<% end %>
 
-#pass in the attraction with params to create action
-<%= button_to "Go on this ride", rides_path, params: {attraction: params[:id]}, method: 'post', action: "create" %>
-
+<% if current_user.admin == true %>
+    <%= link_to "Edit Attraction", edit_attraction_path %>
+<% end %>

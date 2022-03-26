@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'attractions/new'
-  root "users#new"
+  get "/", to: "static#home"
+  root "static#home"
   resources :users, only: [:new, :show, :create ]
-  resources :attractions, only: [:index, :new, :create, :show]
+  resources :attractions
   resources :rides, only: [:index, :new, :create, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

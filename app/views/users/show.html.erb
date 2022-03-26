@@ -1,5 +1,10 @@
 <h1> Show Page </h1>
 
+
+<% if flash[:message] %>
+      <div class="notice"><%= flash[:message] %></div>
+<% end %>
+
 Name: <%= @user.name %> <br>
 Tickets: <%= @user.tickets %> <br>
 Mood: <%= @user.mood %> <br>

@@ -8,18 +8,32 @@ class AttractionsController < ApplicationController
   end
 
   def create 
-  
+
     @attraction = Attraction.new(attraction_params)
 
     if @attraction.save 
-      redirect_to user_path(current_user)
+      redirect_to attraction_path(@attraction)  #redirect to user path if a user
     else 
       render :new
     end
   end
 
   def show 
-    @attraction = Attraction.find_by(params[:id])
+    @attraction = Attraction.find_by(id: params[:id])
+  end
+
+  def edit 
+    @attraction = Attraction.find_by(id: params[:id])
+  end
+
+  def update 
+    @attraction = Attraction.find_by(id: params[:id])
+
+    if @attraction.update(attraction_params) 
+      redirect_to attraction_path(@attraction)  #redirect to user path if a user
+    else 
+      render :new
+    end
   end
 
 

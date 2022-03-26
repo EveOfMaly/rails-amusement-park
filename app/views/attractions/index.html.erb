@@ -22,11 +22,14 @@ Listing attraction
             <p><%= attraction.tickets %></p>
         </div>
         <div class="column">
-            <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %>
+            <% if current_user.admin != true %>
+                <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %>
+            <% else %>
+                <%= link_to "Show #{attraction.name}", attraction_path(attraction) %>
+            <% end %>
         </div>
     </div>
 <% end %>
-
 
 
 
