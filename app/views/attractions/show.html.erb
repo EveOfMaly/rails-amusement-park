@@ -10,6 +10,6 @@ Nausea Requirement <%= @attraction.nausea_rating %> <br>
 Nausea Requirement <%= @attraction.happiness_rating %> <br>
 
 
-
-<%= button_to "Go on this ride", rides_path, method: 'post', action: "new" %>
+#pass in the attraction with params to create action
+<%= button_to "Go on this ride", rides_path, params: {attraction: params[:id]}, method: 'post', action: "create" %>
 

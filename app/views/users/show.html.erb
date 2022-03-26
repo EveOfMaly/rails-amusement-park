@@ -1,11 +1,9 @@
 <h1> Show Page </h1>
 
-<%= @user.name %> <br>
-Mood <%= @user.mood %> <br>
-<%= @user.tickets %> <br>
-<%= @user.happiness %> <br>
-<%= @user.height %> <br>
-
+Name: <%= @user.name %> <br>
+Tickets: <%= @user.tickets %> <br>
+Mood: <%= @user.mood %> <br>
+Height: <%= @user.height %> <br>
 <% if @user.admin == true %>
     <p>ADMIN</p>
 <% end %>

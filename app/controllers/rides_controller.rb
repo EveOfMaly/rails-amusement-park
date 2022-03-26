@@ -4,11 +4,12 @@ class RidesController < ApplicationController
         @rides = Ride.all
     end
 
-    def new 
-    end
-
     def create 
-        binding.pry
+        @attraction = Attraction.find_by(params[:attraction])
+        @user = current_user
+        @ride = Ride.new(user: @user, attraction: @attraction)
+        @ride.take_ride
+        redirect_to user_path(@user)
     end
 
 
